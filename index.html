@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI 디지털 콘텐츠 교육자 funfundigital_AI의 개인 포트폴리오. AI 트렌드와 드론 교육에 대한 관심을 소개합니다.">
+  <title>funfundigital_AI | AI 디지털 콘텐츠 교육자</title>
+  <style>
+    :root{--text-scale:1;--ink:#19332b;--paper:#f7f8f2;--green:#d7ed91;--line:#d8ddd0;--muted:#5e6e64}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}
+    body{font-size:calc(16px * var(--text-scale));margin:0;background:var(--paper);color:var(--ink);font-family:Arial,"Malgun Gothic",sans-serif;line-height:1.7;word-break:keep-all}
+    a{color:inherit;text-decoration:none}button{font:inherit}a:focus-visible,button:focus-visible{outline:3px solid #4b7134;outline-offset:6px}
+    .wrap{width:min(1180px,calc(100% - 64px));margin:auto}
+    header{border-bottom:1px solid var(--line);background:var(--paper)}
+    .nav{min-height:92px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-size:calc(20px * var(--text-scale));font-weight:800;letter-spacing:-.8px}.brand span{color:#637c3f}
+    nav{display:flex;gap:32px;font-size:calc(14px * var(--text-scale))}nav a:hover{color:#668439}
+    .hero{padding:78px 0 74px;display:grid;grid-template-columns:1.15fr 1fr;gap:55px;align-items:center}
+    .eyebrow{display:flex;align-items:center;gap:10px;font-size:calc(12px * var(--text-scale));font-weight:700;letter-spacing:2px;text-transform:uppercase}
+    .dot{width:8px;height:8px;display:inline-block;border-radius:50%;background:#668439}
+    h1{font-size:calc(clamp(42px,5.2vw,70px) * var(--text-scale));line-height:1.22;letter-spacing:-3.5px;margin:26px 0}
+    h1 em{font-style:normal;position:relative;z-index:0;white-space:nowrap}h1 em:after{content:"";position:absolute;left:0;right:0;bottom:4px;height:18px;background:var(--green);z-index:-1}
+    .intro{max-width:380px;color:var(--muted);font-size:calc(16px * var(--text-scale));margin-bottom:30px}
+    .button{display:inline-flex;align-items:center;justify-content:center;gap:28px;padding:14px 23px;border-radius:999px;background:var(--ink);color:white;font-size:calc(14px * var(--text-scale));border:1px solid var(--ink);transition:transform .2s,background .2s}
+    .button:hover{transform:translateY(-3px);background:#315343}.button.light{background:transparent;color:var(--ink)}
+    .hero-art{background:#e9eddf;min-height:440px;border-radius:24px;position:relative;display:grid;place-items:center;overflow:hidden}
+    .art-grid{position:absolute;inset:0;background-image:linear-gradient(#19332b0a 1px,transparent 1px),linear-gradient(90deg,#19332b0a 1px,transparent 1px);background-size:36px 36px}
+    .orbit{position:absolute;width:330px;height:330px;border:1px solid #bdc9ae;border-radius:50%}.orbit:after{content:"";position:absolute;inset:30px;border:1px dashed #bdc9ae;border-radius:50%}
+    .window{position:relative;width:78%;background:#fcfdf8;border:1px solid #c4cdb8;border-radius:14px;transform:rotate(-6deg);box-shadow:14px 20px 0 #19332b0c;z-index:1}
+    .window-bar{height:35px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:5px;padding:0 14px}.window-bar i{width:5px;height:5px;background:#b9c5ac;border-radius:50%}
+    .window-body{padding:26px}.mini-label{font-size:calc(10px * var(--text-scale));letter-spacing:2px;color:var(--muted)}
+    .art-title{font-size:calc(42px * var(--text-scale));line-height:1.15;font-weight:800;letter-spacing:-2px;margin:14px 0 22px}.art-title span{color:#839c49}
+    .art-bottom{display:flex;gap:8px}.art-bottom span{height:8px;width:40%;background:#e7ebdf;border-radius:4px}.art-bottom span:last-child{width:20%;background:var(--green)}
+    .floating{position:absolute;z-index:2;background:var(--green);padding:12px 17px;border-radius:12px;font-size:calc(12px * var(--text-scale));font-weight:bold;right:14px;bottom:48px;transform:rotate(6deg)}
+    .art-caption{position:absolute;left:22px;top:18px;font-size:calc(10px * var(--text-scale));letter-spacing:1.7px;color:var(--muted)}
+    .topic-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:calc(12px * var(--text-scale));letter-spacing:2px;color:var(--muted)}
+    .topic-strip b{font-size:calc(17px * var(--text-scale));font-weight:400;color:#86a04f}
+    section.content{padding:90px 0}.section-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:36px;gap:24px}
+    .section-num{font-size:calc(11px * var(--text-scale));letter-spacing:2px;color:var(--muted)}h2{font-size:calc(36px * var(--text-scale));line-height:1.3;letter-spacing:-1.7px;margin:10px 0 0}.section-note{font-size:calc(14px * var(--text-scale));color:var(--muted);margin:0}
+    .about-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:55px;align-items:center}
+    .photo{aspect-ratio:1.15;background:#e9ecdf;border-radius:18px;border:1px dashed #adb99b;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:24px;overflow:hidden}
+    .photo svg{width:58px;height:58px;stroke:#839775;fill:none;stroke-width:1.2;margin-bottom:18px}.photo strong{font-size:calc(14px * var(--text-scale));font-weight:500}.photo small{font-size:calc(12px * var(--text-scale));color:var(--muted);margin-top:5px}
+    .photo img{width:100%;height:100%;object-fit:cover}.photo:has(img){padding:0;border-style:solid}
+    .about-copy h3{font-size:calc(27px * var(--text-scale));letter-spacing:-1px;margin:0 0 20px}.about-copy p{color:var(--muted);margin:0 0 20px;max-width:500px}
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}.tag{border:1px solid #cbd3be;border-radius:30px;padding:6px 14px;font-size:calc(12px * var(--text-scale))}
+    .interests{border-top:1px solid var(--line)}.cards{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .card{border:1px solid var(--line);border-radius:18px;padding:32px;min-height:260px;display:flex;flex-direction:column;align-items:flex-start}.card:first-child{background:#edf2e2}.card:last-child{background:#eef0e9}
+    .card-top{display:flex;width:100%;justify-content:space-between;align-items:center;font-size:calc(11px * var(--text-scale));letter-spacing:1.5px;color:var(--muted)}.card-icon{font-size:calc(28px * var(--text-scale));line-height:1}
+    .card h3{font-size:calc(26px * var(--text-scale));margin:36px 0 8px;letter-spacing:-1px}.card p{margin:0;color:var(--muted);font-size:calc(14px * var(--text-scale))}
+    .contact{background:var(--green);padding:62px;border-radius:24px;margin:0 0 72px;position:relative;overflow:hidden}
+    .contact h2{font-size:calc(clamp(30px,4vw,48px) * var(--text-scale));margin:14px 0 20px}.contact p{margin-bottom:28px;color:#435638}.contact .button{gap:40px;max-width:100%;overflow-wrap:anywhere;word-break:break-word}
+    .contact-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap}.copy{border:0;background:transparent;text-decoration:underline;text-underline-offset:5px;cursor:pointer;color:var(--ink);font-size:calc(13px * var(--text-scale));padding:10px}.status{font-size:calc(12px * var(--text-scale));min-height:21px;margin-top:12px}
+    footer{border-top:1px solid var(--line);padding:25px 0}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}footer small{font-size:calc(11px * var(--text-scale));color:var(--muted)}.top-link{font-size:calc(12px * var(--text-scale))}
+    @media(max-width:800px){.wrap{width:calc(100% - 40px)}.nav{min-height:78px}.brand{font-size:calc(17px * var(--text-scale))}nav{gap:18px;font-size:calc(12px * var(--text-scale))}.hero{padding:48px 0;grid-template-columns:1fr;gap:32px}h1{letter-spacing:-2.5px}.intro{max-width:100%}.hero-art{min-height:360px}.window{max-width:350px}.topic-strip{letter-spacing:1px;font-size:calc(10px * var(--text-scale));flex-wrap:wrap;justify-content:center;gap:12px}.topic-strip b{font-size:calc(12px * var(--text-scale))}section.content{padding:58px 0}.section-head{align-items:flex-start;flex-direction:column;gap:10px}h2{font-size:calc(30px * var(--text-scale))}.about-grid{grid-template-columns:1fr;gap:28px}.photo{max-width:440px;width:100%;aspect-ratio:1.5}.cards{grid-template-columns:1fr}.card{min-height:235px;padding:26px}.contact{padding:32px 24px;margin-bottom:44px}.footer-inner{align-items:flex-start;flex-wrap:wrap}}
+    @media(max-width:380px){nav{gap:12px}.brand{font-size:calc(15px * var(--text-scale))}h1{font-size:calc(38px * var(--text-scale))}.hero-art{min-height:320px}.art-title{font-size:calc(35px * var(--text-scale))}.button{padding:13px 18px;gap:14px}.contact .button{font-size:calc(12px * var(--text-scale));gap:12px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+    header{padding-top:54px}
+    .display-tools{position:fixed;top:10px;right:16px;z-index:100;display:flex;gap:6px;padding:6px;border:1px solid var(--line);border-radius:999px;background:var(--paper);box-shadow:0 3px 14px #19332b12}
+    .display-tools button{border:1px solid var(--line);border-radius:999px;padding:7px 12px;background:var(--paper);color:var(--ink);font-size:13px;line-height:1.4;cursor:pointer;white-space:nowrap}
+    .display-tools button:hover,.display-tools button[aria-pressed="true"]{background:var(--green)}
+    .display-tools button:disabled{opacity:.45;cursor:default}
+    body.dark{--ink:#edf3e5;--paper:#16211d;--green:#40552d;--line:#3c4b40;--muted:#b5c3b4;color-scheme:dark}
+    body.dark .hero-art,body.dark .photo{background:#253229}
+    body.dark .window{background:#1b2921;border-color:#526348}
+    body.dark .card:first-child{background:#253225}
+    body.dark .card:last-child{background:#25302a}
+    body.dark .contact p{color:#e0eaca}
+    body.dark .button{background:#d7ed91;border-color:#d7ed91;color:#19332b}
+    body.dark .button:hover{background:#e8f6ba}
+    body.dark .brand span,body.dark .art-title span,body.dark nav a:hover{color:#b8d881}
+    body.dark .art-bottom span{background:#43543b}
+    body.dark .orbit,body.dark .orbit:after{border-color:#526348}
+    body.dark .art-grid{background-image:linear-gradient(#edf3e509 1px,transparent 1px),linear-gradient(90deg,#edf3e509 1px,transparent 1px)}
+    @media(max-width:380px){.display-tools{right:8px;gap:4px}.display-tools button{padding:7px 10px}}
+    .weather-box{margin:28px 0 0;padding:18px 24px;border:1px solid var(--line);border-radius:18px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .weather-title{margin:0;font-size:calc(16px * var(--text-scale));letter-spacing:0}
+    .weather-reading{margin:4px 0;font-size:calc(18px * var(--text-scale));font-weight:700}
+    .weather-meta{margin:0;color:var(--muted);font-size:calc(12px * var(--text-scale))}
+    .weather-meta a{text-decoration:underline;text-underline-offset:3px}
+    .weather-refresh{border:1px solid var(--line);border-radius:999px;padding:9px 16px;background:var(--paper);color:var(--ink);font-size:calc(13px * var(--text-scale));cursor:pointer}
+    .weather-refresh:hover{background:var(--green)}
+    .weather-refresh:disabled{opacity:.6;cursor:wait}
+    .memories{border-top:1px solid var(--line)}
+    .memory-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+    .memory-item{margin:0;min-width:0}
+    .memory-open{display:block;width:100%;padding:0;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--paper);color:var(--muted);cursor:zoom-in;aspect-ratio:4/3}
+    .memory-open img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .2s}
+    .memory-open:hover img{transform:scale(1.03)}
+    .memory-fallback{display:none;padding:20px;font-size:calc(13px * var(--text-scale))}
+    .memory-open.is-missing img{display:none}
+    .memory-open.is-missing .memory-fallback{display:block}
+    .memory-open:disabled{cursor:default}
+    .memory-item figcaption{margin-top:12px;color:var(--muted);font-size:calc(14px * var(--text-scale))}
+    .photo-dialog{width:min(1000px,calc(100% - 32px));max-height:90dvh;padding:20px;border:1px solid var(--line);border-radius:18px;background:var(--paper);color:var(--ink);overflow:auto}
+    .photo-dialog::backdrop{background:rgba(0,0,0,.8)}
+    .dialog-toolbar{display:flex;justify-content:flex-end;margin-bottom:12px}
+    .dialog-close{padding:8px 16px;border:1px solid var(--line);border-radius:999px;background:var(--paper);color:var(--ink);cursor:pointer}
+    .photo-dialog figure{margin:0;text-align:center}
+    .photo-dialog img{display:block;max-width:100%;max-height:65dvh;width:auto;height:auto;margin:auto;object-fit:contain}
+    .photo-dialog figcaption{margin-top:14px;font-size:calc(16px * var(--text-scale))}
+    body.photo-viewing{overflow:hidden}
+    @media(max-width:650px){.memory-grid{grid-template-columns:repeat(3,minmax(210px,1fr));overflow-x:auto;padding:6px 6px 18px;gap:16px}}
+    .music-widget{position:fixed;right:16px;bottom:max(16px,env(safe-area-inset-bottom));z-index:110;display:flex;flex-direction:column;align-items:flex-end;gap:10px;max-width:calc(100vw - 32px)}
+    .music-toggle{border:1px solid var(--line);border-radius:999px;background:var(--ink);color:var(--paper);padding:12px 20px;font-size:calc(14px * var(--text-scale));cursor:pointer;box-shadow:0 4px 18px #0002}
+    .music-panel{width:320px;max-width:100%;padding:10px;border:1px solid var(--line);border-radius:16px;background:var(--paper);box-shadow:0 8px 28px #0003}
+    .music-panel[hidden]{display:none}
+    .music-panel iframe{display:block;width:100%;height:200px;border:0;border-radius:8px}
+    .music-status{font-size:calc(12px * var(--text-scale));color:var(--muted);margin:8px 0}
+    .music-panel a{font-size:calc(12px * var(--text-scale));text-decoration:underline}
+    /* 방명록 */
+    .guestbook{border-top:1px solid var(--line)}
+    .guestbook-form{max-width:720px;display:grid;gap:20px}
+    .guestbook-field{display:grid;gap:8px}
+    .guestbook-field label{font-size:calc(14px * var(--text-scale));font-weight:700}
+    .guestbook-field input,.guestbook-field textarea{width:100%;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink);font:inherit}
+    .guestbook-field textarea{min-height:150px;resize:vertical}
+    .guestbook-field input:focus-visible,.guestbook-field textarea:focus-visible{outline:3px solid #668439;outline-offset:3px}
+    .guestbook-form .button{justify-self:start;cursor:pointer}
+    .guestbook-help{margin:0;color:var(--muted);font-size:calc(12px * var(--text-scale))}
+  </style>
+</head>
+<body id="top">
+  <div class="display-tools" role="group" aria-label="화면 보기 설정">
+    <button type="button" id="text-larger">글씨 크게</button>
+    <button type="button" id="text-smaller">글씨 작게</button>
+    <button type="button" id="dark-toggle" aria-pressed="false">어둡게</button>
+  </div>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="funfundigital_AI 첫 화면">funfundigital<span>_AI</span></a>
+      <nav aria-label="주요 메뉴"><a href="#about">소개</a><a href="#interests">관심사</a><a href="#contact">연락</a></nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="weather-box" aria-labelledby="weather-title">
+      <div>
+        <h2 class="weather-title" id="weather-title">오늘 서울 날씨</h2>
+        <p class="weather-reading" id="weather-reading" role="status" aria-live="polite">날씨를 불러오는 중입니다.</p>
+        <p class="weather-meta"><span id="weather-time">서울 시간 기준 · 현재 기온과 날씨</span> · 날씨 제공: <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a></p>
+      </div>
+      <button class="weather-refresh" id="weather-refresh" type="button">새로고침</button>
+    </section>
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> AI & DIGITAL · PORTFOLIO</div>
+        <h1 id="hero-title">누구나<br>나만의 홈페이지를<br><em>디자인한다</em></h1>
+        <p class="intro">AI와 디지털에 관심 있는 누구나.<br>새로운 가능성을 함께 그려가는 공간입니다.</p>
+        <a class="button" href="#about">저를 소개합니다 <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="hero-art" role="img" aria-label="AI와 디지털 창작을 표현한 브라우저 창 일러스트">
+        <div class="art-grid"></div><div class="orbit"></div><span class="art-caption">A LITTLE IDEA, A NEW POSSIBILITY.</span>
+        <div class="window"><div class="window-bar"><i></i><i></i><i></i></div><div class="window-body"><div class="mini-label">MY DIGITAL CANVAS</div><div class="art-title">Create.<br>Learn.<br><span>Imagine.</span></div><div class="art-bottom"><span></span><span></span></div></div></div>
+        <div class="floating">작은 호기심에서 시작하는 변화 ↗</div>
+      </div>
+    </section>
+    <div class="topic-strip" aria-label="관심 키워드"><span>ARTIFICIAL INTELLIGENCE</span><b aria-hidden="true">✳</b><span>DIGITAL CONTENTS</span><b aria-hidden="true">✳</b><span>DRONE EDUCATION</span></div>
+    <section class="content" id="about" aria-labelledby="about-title">
+      <div class="section-head"><div><div class="section-num">01 / ABOUT ME</div><h2 id="about-title">호기심을, 가능성으로.</h2></div><p class="section-note">funfundigital_AI를 소개합니다.</p></div>
+      <div class="about-grid">
+        <!-- 사진을 준비하면 아래 .photo 내부를 <img src="profile.jpg" alt="프로필 사진"> 으로 교체하세요. -->
+        <div class="photo"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="5" y="8" width="54" height="48" rx="7"/><circle cx="23" cy="24" r="6"/><path d="m8 48 15-14 10 9 9-13 14 18"/></svg><strong>이곳에 사진을 담아 주세요</strong><small>프로필 또는 교육 현장 사진</small></div>
+        <div class="about-copy"><h3>AI 디지털 콘텐츠 교육자</h3><p>안녕하세요. funfundigital_AI입니다.<br>AI와 디지털 콘텐츠 교육을 중심으로, AI 트렌드와 드론 교육에 관심을 두고 있습니다.</p><p>AI와 디지털에 관심 있는 모든 분을 환영합니다.</p><div class="tags"><span class="tag"># AI</span><span class="tag"># 디지털 콘텐츠</span><span class="tag"># 교육</span></div></div>
+      </div>
+    </section>
+    <section class="content interests" id="interests" aria-labelledby="interests-title">
+      <div class="section-head"><div><div class="section-num">02 / INTERESTS</div><h2 id="interests-title">관심을 두고 있는 것들</h2></div><p class="section-note">새로운 기술, 넓어지는 시선.</p></div>
+      <div class="cards">
+        <article class="card"><div class="card-top"><span>01 · AI TRENDS</span><span class="card-icon" aria-hidden="true">✳</span></div><h3>AI 트렌드</h3><p>변화하는 AI 기술과 디지털 콘텐츠에 대한 관심.</p></article>
+        <article class="card"><div class="card-top"><span>02 · DRONE EDUCATION</span><span class="card-icon" aria-hidden="true">⌘</span></div><h3>드론 교육</h3><p>하늘로 확장되는 디지털 기술과 드론 교육에 대한 관심.</p></article>
+      </div>
+    </section>
+    <section class="content memories" id="memories" aria-labelledby="memories-title">
+      <div class="section-head">
+        <div><div class="section-num">PHOTO ALBUM</div><h2 id="memories-title">추억 사진</h2></div>
+        <p class="section-note">사진을 누르면 크게 볼 수 있습니다.</p>
+      </div>
+      <div class="memory-grid">
+        <!-- 아래 figcaption의 문구를 원하는 사진 설명으로 바꾸세요. -->
+        <figure class="memory-item">
+          <button class="memory-open" type="button" aria-label="첫 번째 추억 사진 크게 보기" aria-haspopup="dialog">
+            <img src="photo1.jpg" alt="첫 번째 추억 사진" loading="lazy">
+            <span class="memory-fallback">photo1.jpg 사진을 준비해 주세요.</span>
+          </button>
+          <figcaption>첫 번째 추억 사진입니다.</figcaption>
+        </figure>
+        <figure class="memory-item">
+          <button class="memory-open" type="button" aria-label="두 번째 추억 사진 크게 보기" aria-haspopup="dialog">
+            <img src="photo2.jpg" alt="두 번째 추억 사진" loading="lazy">
+            <span class="memory-fallback">photo2.jpg 사진을 준비해 주세요.</span>
+          </button>
+          <figcaption>두 번째 추억 사진입니다.</figcaption>
+        </figure>
+        <figure class="memory-item">
+          <button class="memory-open" type="button" aria-label="세 번째 추억 사진 크게 보기" aria-haspopup="dialog">
+            <img src="photo3.jpg" alt="세 번째 추억 사진" loading="lazy">
+            <span class="memory-fallback">photo3.jpg 사진을 준비해 주세요.</span>
+          </button>
+          <figcaption>세 번째 추억 사진입니다.</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="section-num">03 / GET IN TOUCH</div><h2 id="contact-title">반가운 연결을 기다립니다.</h2><p>AI와 디지털에 관한 이야기가 있다면,<br>이메일로 편하게 연락해 주세요.</p>
+      <div class="contact-actions"><a class="button" href="mailto:digital241205@gmail.com">digital241205@gmail.com <span aria-hidden="true">↗</span></a><button class="copy" id="copy-email" type="button">이메일 복사</button></div><div class="status" id="copy-status" role="status" aria-live="polite"></div>
+    </section>
+    <section class="content guestbook" id="guestbook" aria-labelledby="guestbook-title">
+      <div class="section-head">
+        <div><div class="section-num">GUESTBOOK</div><h2 id="guestbook-title">방명록</h2></div>
+        <p class="section-note">이름과 남길 말을 적어 주세요.</p>
+      </div>
+      <form class="guestbook-form" name="guestbook" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="guestbook">
+        <div class="guestbook-field">
+          <label for="guestbook-name">이름</label>
+          <input id="guestbook-name" name="name" type="text" autocomplete="name" maxlength="50" placeholder="이름을 입력해 주세요" required>
+        </div>
+        <div class="guestbook-field">
+          <label for="guestbook-message">남길 말</label>
+          <textarea id="guestbook-message" name="message" maxlength="2000" placeholder="남기고 싶은 이야기를 적어 주세요" required></textarea>
+        </div>
+        <p class="guestbook-help" id="guestbook-help">남긴 글은 운영자에게 전달되며, 사이트에 공개되지 않습니다.</p>
+        <button class="button" type="submit">남기기 <span aria-hidden="true">↗</span></button>
+      </form>
+    </section>
+  </main>
+  <footer><div class="wrap footer-inner"><a class="brand" href="#top">funfundigital<span>_AI</span></a><small>© <span id="year">2026</span> funfundigital_AI</small><a class="top-link" href="#top">맨 위로 ↑</a></div></footer>
+  <dialog class="photo-dialog" id="photo-dialog" aria-label="추억 사진 크게 보기" aria-describedby="large-caption">
+    <div class="dialog-toolbar"><button class="dialog-close" id="photo-close" type="button" autofocus>닫기 ✕</button></div>
+    <figure><img id="large-photo" alt=""><figcaption id="large-caption"></figcaption></figure>
+  </dialog>
+  <aside class="music-widget" aria-label="배경 음악">
+    <div class="music-panel" id="music-panel" hidden>
+      <div id="youtube-player"></div>
+      <p class="music-status" id="music-status" role="status" aria-live="polite">음악을 준비하고 있습니다.</p>
+      <a href="https://www.youtube.com/watch?v=RWl5X8Xbfxg" target="_blank" rel="noopener noreferrer">YouTube에서 음악 열기 ↗</a>
+    </div>
+    <button class="music-toggle" id="music-toggle" type="button" aria-controls="music-panel" aria-pressed="false" aria-expanded="false">음악 켜기</button>
+  </aside>
+  <script>
+    // YouTube 공식 플레이어로 음악 재생·일시정지·반복
+    const musicToggle = document.getElementById('music-toggle');
+    const musicPanel = document.getElementById('music-panel');
+    const musicStatus = document.getElementById('music-status');
+    let musicPlayer;
+    let musicReady = false;
+    let musicRequested = false;
+    let musicApiLoading = false;
+    let musicTimer;
+    function setMusicButton(on) {
+      musicToggle.textContent = on ? '음악 끄기' : '음악 켜기';
+      musicToggle.setAttribute('aria-pressed', String(on));
+    }
+    function musicFailure(message) {
+      clearTimeout(musicTimer);
+      musicRequested = false;
+      setMusicButton(false);
+      musicStatus.textContent = message;
+    }
+    window.onYouTubeIframeAPIReady = function () {
+      musicPlayer = new YT.Player('youtube-player', {
+        width:300, height:200, videoId:'RWl5X8Xbfxg',
+        playerVars:{playsinline:1, controls:1, loop:1, playlist:'RWl5X8Xbfxg'},
+        events:{
+          onReady(event) {
+            clearTimeout(musicTimer);
+            musicReady = true;
+            const frame = event.target.getIframe();
+            frame.title = '배경 음악 YouTube 플레이어';
+            frame.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture');
+            if (musicRequested) {
+              musicStatus.textContent = '재생이 시작되지 않으면 플레이어의 재생 버튼을 눌러 주세요.';
+              event.target.playVideo();
+            }
+          },
+          onStateChange(event) {
+            if (event.data === YT.PlayerState.PLAYING) {
+              musicRequested = true;
+              setMusicButton(true);
+              musicStatus.textContent = '음악을 반복 재생하고 있습니다.';
+            } else if (event.data === YT.PlayerState.PAUSED) {
+              musicRequested = false;
+              setMusicButton(false);
+              musicStatus.textContent = '음악을 일시정지했습니다.';
+            } else if (event.data === YT.PlayerState.ENDED && musicRequested) {
+              event.target.playVideo();
+            }
+          },
+          onAutoplayBlocked() {
+            musicStatus.textContent = '브라우저가 재생을 막았습니다. 플레이어의 재생 버튼을 눌러 주세요.';
+          },
+          onError(event) {
+            musicFailure(event.data === 153
+              ? '로컬 파일에서는 YouTube 재생이 제한될 수 있습니다. 웹 서버에서 열거나 아래 YouTube 링크를 이용해 주세요.'
+              : '이 영상은 여기서 재생할 수 없습니다. 아래 YouTube 링크를 이용해 주세요.');
+          }
+        }
+      });
+    };
+    musicToggle.addEventListener('click', () => {
+      musicRequested = !musicRequested;
+      setMusicButton(musicRequested);
+      musicPanel.hidden = !musicRequested;
+      musicToggle.setAttribute('aria-expanded', String(musicRequested));
+      if (!musicRequested) {
+        if (musicReady) musicPlayer.pauseVideo();
+        return;
+      }
+      if (musicReady) {
+        musicStatus.textContent = '재생이 시작되지 않으면 플레이어의 재생 버튼을 눌러 주세요.';
+        musicPlayer.playVideo();
+      } else if (!musicApiLoading) {
+        musicApiLoading = true;
+        musicStatus.textContent = '음악을 준비하고 있습니다.';
+        if (window.YT && window.YT.Player) {
+          window.onYouTubeIframeAPIReady();
+        } else {
+          const script = document.createElement('script');
+          script.src = 'https://www.youtube.com/iframe_api';
+          script.onerror = () => {
+            musicApiLoading = false;
+            script.remove();
+            musicFailure('YouTube에 연결하지 못했습니다. 인터넷 연결을 확인해 주세요.');
+          };
+          document.head.appendChild(script);
+          musicTimer = setTimeout(() => {
+            if (!musicReady) musicFailure('연결이 지연되고 있습니다. 아래 YouTube 링크로 음악을 열 수 있습니다.');
+          }, 15000);
+        }
+      }
+    });
+    const photoDialog = document.getElementById('photo-dialog');
+    const largePhoto = document.getElementById('large-photo');
+    const largeCaption = document.getElementById('large-caption');
+    document.querySelectorAll('.memory-open').forEach(button => {
+      const image = button.querySelector('img');
+      function markMissing() {
+        button.classList.add('is-missing');
+        button.disabled = true;
+      }
+      image.addEventListener('error', markMissing);
+      if (image.complete && image.naturalWidth === 0) markMissing();
+      button.addEventListener('click', () => {
+        largePhoto.src = image.src;
+        largePhoto.alt = image.alt;
+        largeCaption.textContent = button.closest('figure').querySelector('figcaption').textContent;
+        photoDialog.showModal();
+        document.body.classList.add('photo-viewing');
+      });
+    });
+    document.getElementById('photo-close').addEventListener('click', () => photoDialog.close());
+    photoDialog.addEventListener('click', event => {
+      const rect = photoDialog.getBoundingClientRect();
+      if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) photoDialog.close();
+    });
+    photoDialog.addEventListener('close', () => {
+      document.body.classList.remove('photo-viewing');
+      largePhoto.removeAttribute('src');
+    });
+    let textSize = 100;
+    const larger = document.getElementById('text-larger');
+    const smaller = document.getElementById('text-smaller');
+    function resizeText(change) {
+      textSize = Math.max(80, Math.min(130, textSize + change));
+      document.documentElement.style.setProperty('--text-scale', textSize / 100);
+      larger.disabled = textSize === 130;
+      smaller.disabled = textSize === 80;
+    }
+    larger.addEventListener('click', () => resizeText(10));
+    smaller.addEventListener('click', () => resizeText(-10));
+    document.getElementById('dark-toggle').addEventListener('click', function () {
+      const isDark = document.body.classList.toggle('dark');
+      this.setAttribute('aria-pressed', String(isDark));
+      this.textContent = isDark ? '밝게' : '어둡게';
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('copy-email').addEventListener('click', async function () {
+      const email = 'digital241205@gmail.com';
+      const status = document.getElementById('copy-status');
+      try {
+        if (!navigator.clipboard || !window.isSecureContext) throw new Error('Clipboard unavailable');
+        await navigator.clipboard.writeText(email);
+        status.textContent = '이메일 주소를 복사했습니다.';
+      } catch (error) {
+        // 로컬 파일 등 클립보드가 제한된 환경에서도 주소를 복사할 수 있습니다.
+        window.prompt('아래 이메일 주소를 복사해 주세요.', email);
+        status.textContent = '이메일 주소: ' + email;
+      }
+    });
+    // Open-Meteo: 서울 좌표, 섭씨, 한국 시간. API 키가 필요 없습니다.
+    const weatherReading = document.getElementById('weather-reading');
+    const weatherTime = document.getElementById('weather-time');
+    const weatherRefresh = document.getElementById('weather-refresh');
+    function describeWeather(code) {
+      const descriptions = {
+        0:'맑음', 1:'대체로 맑음', 2:'구름 조금', 3:'흐림',
+        45:'안개', 48:'착빙 안개',
+        51:'약한 이슬비', 53:'이슬비', 55:'강한 이슬비',
+        56:'약한 어는 이슬비', 57:'강한 어는 이슬비',
+        61:'약한 비', 63:'비', 65:'강한 비',
+        66:'약한 어는 비', 67:'강한 어는 비',
+        71:'약한 눈', 73:'눈', 75:'강한 눈', 77:'눈 알갱이',
+        80:'약한 소나기', 81:'소나기', 82:'강한 소나기',
+        85:'약한 눈 소나기', 86:'강한 눈 소나기',
+        95:'뇌우', 96:'우박을 동반한 뇌우', 99:'강한 우박을 동반한 뇌우'
+      };
+      return descriptions[code] || '날씨 상태 확인 불가';
+    }
+    async function loadWeather() {
+      if (weatherRefresh.disabled) return;
+      weatherRefresh.disabled = true;
+      weatherReading.textContent = '날씨를 불러오는 중입니다.';
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 12000);
+      try {
+        const url = 'https://api.open-meteo.com/v1/forecast?latitude=37.5665&longitude=126.9780&current=temperature_2m,weather_code&temperature_unit=celsius&timezone=Asia%2FSeoul&forecast_days=1';
+        const response = await fetch(url, {signal:controller.signal, cache:'no-store'});
+        if (!response.ok) throw new Error('Weather request failed');
+        const data = await response.json();
+        const current = data.current;
+        if (!current || !Number.isFinite(current.temperature_2m) || !Number.isInteger(current.weather_code) || typeof current.time !== 'string' || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/.test(current.time)) {
+          throw new Error('Invalid weather data');
+        }
+        weatherReading.textContent = `${current.temperature_2m.toFixed(1)}°C · ${describeWeather(current.weather_code)}`;
+        const [date, time] = current.time.split('T');
+        weatherTime.textContent = `${date.replace(/-/g, '.')} ${time.slice(0,5)} 기준 (서울)`;
+      } catch (error) {
+        weatherReading.textContent = '날씨를 불러오지 못했습니다.';
+        weatherTime.textContent = '인터넷 연결을 확인한 뒤 새로고침을 눌러 주세요';
+      } finally {
+        clearTimeout(timeout);
+        weatherRefresh.disabled = false;
+      }
+    }
+    weatherRefresh.addEventListener('click', loadWeather);
+    loadWeather();
+    // 페이지가 열린 동안 15분마다 최신 정보를 가져옵니다.
+    setInterval(loadWeather, 15 * 60 * 1000);
+  </script>
+</body>
+</html>
